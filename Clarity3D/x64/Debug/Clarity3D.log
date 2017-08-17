@@ -1,0 +1,26 @@
+﻿  Window.cpp
+  main.cpp
+  gl_core_4_3.cpp
+  Engine.cpp
+  MeshLoaders.cpp
+c:\users\mark.junge\documents\c++\projects\clarity\clarity3d\source\core\graphics\mesh_loaders\meshloaders.cpp(30): warning C4267: '=': conversion from 'size_t' to 'uint32_t', possible loss of data
+c:\users\mark.junge\documents\c++\projects\clarity\clarity3d\source\core\graphics\mesh_loaders\meshloaders.cpp(31): warning C4267: '=': conversion from 'size_t' to 'uint32_t', possible loss of data
+  Mesh.cpp
+c:\users\mark.junge\documents\c++\projects\clarity\clarity3d\source\core\graphics\mesh.cpp(31): warning C4267: '=': conversion from 'size_t' to 'uint32', possible loss of data
+c:\users\mark.junge\documents\c++\projects\clarity\clarity3d\source\core\graphics\mesh.cpp(32): warning C4267: '=': conversion from 'size_t' to 'uint32', possible loss of data
+  Shader.cpp
+  Camera.cpp
+  Generating Code...
+Engine.obj : error LNK2019: unresolved external symbol glfwGetKey referenced in function "public: void __cdecl Engine::start(void)" (?start@Engine@@QEAAXXZ)
+Window.obj : error LNK2019: unresolved external symbol glfwInit referenced in function "public: __cdecl Window::Window(unsigned int,unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct ContextSettings &)" (??0Window@@QEAA@IIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAUContextSettings@@@Z)
+Window.obj : error LNK2019: unresolved external symbol glfwTerminate referenced in function "public: __cdecl Window::~Window(void)" (??1Window@@QEAA@XZ)
+Window.obj : error LNK2019: unresolved external symbol glfwWindowHint referenced in function "public: __cdecl Window::Window(unsigned int,unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct ContextSettings &)" (??0Window@@QEAA@IIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAUContextSettings@@@Z)
+Window.obj : error LNK2019: unresolved external symbol glfwCreateWindow referenced in function "public: __cdecl Window::Window(unsigned int,unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct ContextSettings &)" (??0Window@@QEAA@IIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAUContextSettings@@@Z)
+Window.obj : error LNK2019: unresolved external symbol glfwDestroyWindow referenced in function "public: __cdecl Window::~Window(void)" (??1Window@@QEAA@XZ)
+Window.obj : error LNK2019: unresolved external symbol glfwWindowShouldClose referenced in function "public: bool __cdecl Window::isOpen(void)const " (?isOpen@Window@@QEBA_NXZ)
+Window.obj : error LNK2019: unresolved external symbol glfwSetWindowShouldClose referenced in function "public: void __cdecl Window::close(void)const " (?close@Window@@QEBAXXZ)
+Window.obj : error LNK2019: unresolved external symbol glfwPollEvents referenced in function "public: void __cdecl Window::pollEvents(void)const " (?pollEvents@Window@@QEBAXXZ)
+Window.obj : error LNK2019: unresolved external symbol glfwMakeContextCurrent referenced in function "public: __cdecl Window::Window(unsigned int,unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,struct ContextSettings &)" (??0Window@@QEAA@IIV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAUContextSettings@@@Z)
+Window.obj : error LNK2019: unresolved external symbol glfwSwapBuffers referenced in function "public: void __cdecl Window::display(void)const " (?display@Window@@QEBAXXZ)
+C:\Users\mark.junge\Documents\C++\lib\glfw3.lib : warning LNK4272: library machine type 'X86' conflicts with target machine type 'x64'
+C:\Users\mark.junge\Documents\C++\projects\clarity\x64\Debug\Clarity3D.exe : fatal error LNK1120: 11 unresolved externals
