@@ -5,23 +5,64 @@
 #include <core/Camera.h>
 #include <game/StaticMesh.h>
 #include <game/MarchingCubes.h>
+#include <core/physics/BasicCollision.h>
+
+using namespace basic_collision;
 
 struct Node {
+	Node() {
+		color = glm::vec3((rand() % 100) / 100.f, (rand() % 100) / 100.f, (rand() % 100) / 100.f);
+		memset(children, 0, sizeof(Node*) * 8);
+	}
 	// C++ makes absolutely no coherent sense to me, but apparently this ends up being zeroed out for us, which is nice
 	Node* children[8];
 	glm::vec3 center;
 	float radius;
+
+	glm::vec3 color;
+
+	AABB getAABB() {
+		return AABB(center - glm::vec3(radius), glm::vec3(radius * 2.f));
+	}
+
+	bool isLeaf() {
+		for (auto& it : children) {
+			if (it != nullptr) return false;
+		}
+
+		return true;
+	}
 };
 
 struct Terrain {
 	Terrain() {
 		cube.loadFromFile("assets/cube.ply");
 		initialNode.radius = 1;
+	}
 
-		split(initialNode);
-		split(*initialNode.children[0]);
-		split(*initialNode.children[0]->children[4]);
-		split(*initialNode.children[4]);
+	std::pair<Node*, float> intersectRay(Ray& ray) {
+		return intersectNode(initialNode, ray);
+	}
+
+	std::pair<Node*, float> intersectNode(Node& node, Ray& ray) {	
+		if (node.isLeaf()) {
+			auto result = intersect_ray_aabb(ray, node.getAABB());
+			if (result.first == true) {
+				return std::make_pair(&node, result.second);
+			}
+		}
+		else {
+			std::pair<Node*, float> closest = { nullptr, std::numeric_limits<float>::max() };
+
+			for (auto& it : node.children) {
+				auto result = intersectNode(*it, ray);
+				if (result.second < closest.second) closest = result;
+			}
+
+			return closest;
+		}
+
+		return std::make_pair(nullptr, std::numeric_limits<float>::max());
 	}
 
 	void draw(Shader& shader) {
@@ -42,7 +83,7 @@ struct Terrain {
 
 		if (!hasChildren) {
 			shader.setUniform<glm::mat4>("model", nodeTransform.getModelMatrix());
-			shader.setUniform<glm::vec3>("fillColor", glm::vec3((rand() % 100) / 100.f, (rand() % 100) / 100.f, (rand() % 100) / 100.f));
+			shader.setUniform<glm::vec3>("fillColor", node.color);
 			cube.draw();
 		}
 	}
@@ -61,8 +102,8 @@ struct Terrain {
 
 		for (int i = 0; i < 8; i++) {
 			node.children[i] = new Node();
-			node.children[i]->radius = node.radius / 2;
-			node.children[i]->center = node.center + boundsOffsetTable[i] * node.radius / 2.f;
+			node.children[i]->radius = node.radius / 2.f;
+			node.children[i]->center = node.center + boundsOffsetTable[i] * node.radius;
 		}
 	}
 
@@ -77,6 +118,8 @@ public:
 	Engine();
 
 	void start();
+
+	void key_callback(int, int, int, int);
 
 	Window window;
 	Shader shader;

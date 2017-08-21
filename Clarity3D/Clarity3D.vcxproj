@@ -69,20 +69,20 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Users\mark.junge\Documents\C++\include;C:\Users\mark.junge\Documents\C++\projects\clarity\Clarity3D\source;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\mark.junge\Documents\C++\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Nyrox\Documents\Development\C++\include;C:\Users\Nyrox\Documents\Development\C++\Projects\Clarity\Clarity3D\source;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Nyrox\Documents\Development\C++\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\mark.junge\Documents\C++\include;C:\Users\mark.junge\Documents\C++\projects\clarity\Clarity3D\source;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\mark.junge\Documents\C++\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Nyrox\Documents\Development\C++\include;C:\Users\Nyrox\Documents\Development\C++\Projects\Clarity\Clarity3D\source;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Nyrox\Documents\Development\C++\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\Users\mark.junge\Documents\C++\include;C:\Users\mark.junge\Documents\C++\projects\clarity\Clarity3D\source;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\mark.junge\Documents\C++\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Nyrox\Documents\Development\C++\include;C:\Users\Nyrox\Documents\Development\C++\Projects\Clarity\Clarity3D\source;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Nyrox\Documents\Development\C++\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>C:\Users\mark.junge\Documents\C++\include;C:\Users\mark.junge\Documents\C++\projects\clarity\Clarity3D\source;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\mark.junge\Documents\C++\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Nyrox\Documents\Development\C++\include;C:\Users\Nyrox\Documents\Development\C++\Projects\Clarity\Clarity3D\source;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Nyrox\Documents\Development\C++\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -137,6 +137,7 @@
     <ClCompile Include="source\core\graphics\Shader.cpp" />
     <ClCompile Include="source\core\graphics\Mesh.cpp" />
     <ClCompile Include="source\core\graphics\mesh_loaders\MeshLoaders.cpp" />
+    <ClCompile Include="source\core\physics\BasicCollision.cpp" />
     <ClCompile Include="source\game\Engine.cpp" />
     <ClCompile Include="source\gl_core_4_3.cpp" />
     <ClCompile Include="source\main.cpp" />
@@ -149,9 +150,13 @@
     <ClInclude Include="source\core\graphics\Mesh.h" />
     <ClInclude Include="source\core\graphics\mesh_loaders\MeshLoaders.h" />
     <ClInclude Include="source\core\graphics\Vertex.h" />
+    <ClInclude Include="source\core\physics\AABB.h" />
+    <ClInclude Include="source\core\physics\BasicCollision.h" />
+    <ClInclude Include="source\core\physics\Ray.h" />
     <ClInclude Include="source\core\Transform.h" />
     <ClInclude Include="source\core\Window.h" />
     <ClInclude Include="source\game\Engine.h" />
+    <ClInclude Include="source\game\MarchingCubes.h" />
     <ClInclude Include="source\game\Player.h" />
     <ClInclude Include="source\game\StaticMesh.h" />
     <ClInclude Include="source\gl_core_4_3.hpp" />

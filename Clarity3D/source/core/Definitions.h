@@ -8,6 +8,8 @@ namespace std {
 	namespace filesystem = experimental::filesystem;
 }
 
+using namespace std::string_literals;
+
 // Alias smart pointers
 template<class T>
 using uptr = std::unique_ptr<T>;

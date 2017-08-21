@@ -1,7 +1,8 @@
 ﻿  Engine.cpp
+c:\users\nyrox\documents\development\c++\projects\clarity\clarity3d\source\game\engine.cpp(21): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Generating Code...
   Compiling...
   main.cpp
   Generating Code...
-  Clarity3D.vcxproj -> C:\Users\mark.junge\Documents\C++\projects\clarity\Debug\Clarity3D.exe
-  Clarity3D.vcxproj -> C:\Users\mark.junge\Documents\C++\projects\clarity\Debug\Clarity3D.pdb (Partial PDB)
+  Clarity3D.vcxproj -> C:\Users\Nyrox\Documents\Development\C++\Projects\Clarity\Debug\Clarity3D.exe
+  Clarity3D.vcxproj -> C:\Users\Nyrox\Documents\Development\C++\Projects\Clarity\Debug\Clarity3D.pdb (Partial PDB)

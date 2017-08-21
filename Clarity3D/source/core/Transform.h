@@ -14,6 +14,10 @@ struct Transform {
 		return glm::vec3(glm::mat4(rotation) * glm::vec4(1, 0, 0, 0));
 	}
 
+	glm::vec3 up() {
+		return glm::vec3(glm::mat4(rotation) * glm::vec4(0, 1, 0, 0));
+	}
+
 	void rotateAround(float angle, glm::vec3 axis) {
 		rotation = glm::rotate(rotation, angle, axis);
 	}

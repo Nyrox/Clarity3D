@@ -63,6 +63,10 @@ std::vector<T> string_parse_vector(std::vector<std::string> data) {
 std::pair<std::vector<Vertex>, std::vector<uint32>> MeshLoaders::ply(const std::filesystem::path& path) {
 	std::string line;
 	std::ifstream file(path);
+	if (!file.is_open()) {
+		std::cerr << "Failed to open file: " << path << "\n";
+		throw std::runtime_error("Faild to open file: "s + path.string());
+	}
 
 	std::vector<Vertex> vertices;
 	std::vector<uint32> indices;

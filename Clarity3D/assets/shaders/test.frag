@@ -13,7 +13,7 @@ void main() {
 	vec3 N = normalize(worldNormal);
 	vec3 L = fragPos - lightPos;
 	
-	float diff = max(dot(N, L), 0.0);
+	float diff = max(dot(N, L), 0.0) + 0.10;
 	float d = distance(fragPos, lightPos);
 	float attenuation = 1 / (d*d);
 	
